@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c544cad3e14b4a046acddaec09af026d, type: 3}
+  m_Name: ArmorChart
+  m_EditorClassIdentifier: 
+  armors:
+  - armorType: 0
+    damageType:
+    - damageType: 0
+      damagePercentage: 75
+    - damageType: 1
+      damagePercentage: 100
+    - damageType: 2
+      damagePercentage: 125
+    - damageType: 3
+      damagePercentage: 150
+  - armorType: 1
+    damageType:
+    - damageType: 0
+      damagePercentage: 100
+    - damageType: 1
+      damagePercentage: 75
+    - damageType: 2
+      damagePercentage: 125
+    - damageType: 3
+      damagePercentage: 150
+  - armorType: 2
+    damageType:
+    - damageType: 0
+      damagePercentage: 50
+    - damageType: 1
+      damagePercentage: 150
+    - damageType: 2
+      damagePercentage: 75
+    - damageType: 3
+      damagePercentage: 100
