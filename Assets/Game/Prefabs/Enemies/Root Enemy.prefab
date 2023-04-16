@@ -281,6 +281,10 @@ GameObject:
   - component: {fileID: 8791179918983305975}
   - component: {fileID: 1654127595214122653}
   - component: {fileID: 2734349399887498410}
+  - component: {fileID: 288543222559207021}
+  - component: {fileID: 7376869657178773062}
+  - component: {fileID: -1859477195522724065}
+  - component: {fileID: 1282265908926152374}
   m_Layer: 0
   m_Name: Root Enemy
   m_TagString: Enemy
@@ -317,8 +321,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1f98f899b9e17d409bfb29f494c57db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  path: {fileID: 0}
-  waypointTolerance: 1
 --- !u!195 &3806482446268262435
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -389,6 +391,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onHealed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 603185250404293316}
+        m_TargetAssemblyTypeName: TD.UI.EnemyInfo, Assembly-CSharp
+        m_MethodName: RefreshUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8791179918983305975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -430,6 +447,63 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &288543222559207021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806482446268263389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25e635dfcca6721448570442be85fcca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypointTolerance: 2
+--- !u!114 &7376869657178773062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806482446268263389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b309211fa8b70f4384e9105439a7862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1859477195522724065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806482446268263389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b1a9f786de390f4f8e334b9b33c4cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radarRange: 4
+  range: 2
+  timeBetweenAttacks: 1
+  damage: 30
+--- !u!114 &1282265908926152374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806482446268263389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b28f14af51e3b48afa3ab628ae60fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetType: 0
+  ability: {fileID: 0}
+  spellRange: 5
+  cooldown: 2
 --- !u!1 &4860174481422629609
 GameObject:
   m_ObjectHideFlags: 0

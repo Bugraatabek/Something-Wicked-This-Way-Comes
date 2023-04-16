@@ -1,17 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &9138813732361451806
+--- !u!1001 &4516918861386849611
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1383711189124863420, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
+    - target: {fileID: 1282265908926152374, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
         type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: ability
       value: 
-      objectReference: {fileID: 2100000, guid: 256cd55a341ce1c43bc0c30cee448939, type: 2}
+      objectReference: {fileID: 11400000, guid: 56a7973efca82ea4790b0d6b556421f2,
+        type: 2}
+    - target: {fileID: 1282265908926152374, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
+        type: 3}
+      propertyPath: spellRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1282265908926152374, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
+        type: 3}
+      propertyPath: targetType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3806482446268262432, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
         type: 3}
       propertyPath: m_RootOrder
@@ -67,15 +78,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3806482446268263388, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
-        type: 3}
-      propertyPath: speed
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 3806482446268263389, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
         type: 3}
       propertyPath: m_Name
-      value: Heavy Root Enemy Variant
+      value: Cast to Tower
       objectReference: {fileID: 0}
     - target: {fileID: 4148716306234791679, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
         type: 3}
@@ -84,28 +90,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4148716306234791679, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
         type: 3}
-      propertyPath: goldPrize
-      value: 2
+      propertyPath: maxHealth
+      value: 200
       objectReference: {fileID: 0}
-    - target: {fileID: 4148716306234791679, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
-        type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148716306234791679, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
-        type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148716306234791679, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
-        type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4148716306234791679, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10,
-        type: 3}
-      propertyPath: onDie.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: TD.Control.EnemyController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1859477195522724065, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e4cd7cc0ee5e3cf4dace7cc2eb2ebd10, type: 3}

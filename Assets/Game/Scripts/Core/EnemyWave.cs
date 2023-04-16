@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TD.AI;
 using TD.Combat;
+using TD.Control;
 using UnityEngine;
 
 namespace TD.Core
@@ -9,12 +11,12 @@ namespace TD.Core
     public class EnemyWave : MonoBehaviour
     {
         [SerializeField] Target[] targets;
-        Transform spawnPoint = null;
+        SpawnPoint spawnPoint = null;
         Target[] targetInstances;
         
         private void Awake() 
         {
-            spawnPoint = FindObjectOfType<SpawnPoint>().transform;
+            spawnPoint = GetComponentInParent<SpawnPoint>();
             BuildWave();
         }
 
@@ -23,7 +25,7 @@ namespace TD.Core
             targetInstances = new Target[targets.Length];
             for (int i = 0; i < targetInstances.Length; i++)
             {
-                targetInstances[i] = Instantiate(targets[i], spawnPoint);
+                targetInstances[i] = Instantiate(targets[i], spawnPoint.transform);
                 targetInstances[i].gameObject.SetActive(false);
             }
         }
@@ -39,6 +41,7 @@ namespace TD.Core
             for (int i = 0; i < targets.Length; i++)
             {
                 targetInstances[i].gameObject.SetActive(true);
+                targetInstances[i].GetComponent<MoveAction>().SetPath(spawnPoint.GetPath());
                 yield return new WaitForSeconds(1);
             }
             gameObject.SetActive(false);

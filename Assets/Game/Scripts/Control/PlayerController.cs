@@ -4,6 +4,8 @@ using TD.Core;
 using TD.Shops;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
+using UnityEngine.UI;
 
 namespace TD.Control
 {
@@ -11,12 +13,15 @@ namespace TD.Control
     {
         
         [SerializeField] LayerMask canCreateTowerOnLayer;
+        [SerializeField] Button cancelButton;
         Tower towerToCreate;
         Bank bank;
         TowerShop shop;
+        UnityEngine.InputSystem.EnhancedTouch.Touch enhancedTouch;
 
         private void Awake() 
         {
+            EnhancedTouchSupport.Enable();
             shop = FindObjectOfType<TowerShop>();
             bank = GetComponent<Bank>();    
         }
@@ -31,7 +36,7 @@ namespace TD.Control
             }
             else
             {
-                StartCoroutine(ConstructTower());
+                StartCoroutine(ConstructTowerMobile());
             }
         }
         
@@ -67,30 +72,45 @@ namespace TD.Control
 
         private IEnumerator ConstructTowerMobile()
         {
-            var towerInstance = Instantiate(towerToCreate, transform);
+            RaycastHit raycastHit;
             while(true)
             {
+                foreach (var terrain in GameObject.FindGameObjectsWithTag("Constructable"))
+                {
+                    terrain.GetComponent<MeshRenderer>().material.color = Color.green;
+                }
+
+                yield return new WaitForEndOfFrame();
                 if(UnityEngine.InputSystem.Touchscreen.current.press.IsPressed())
                 {
-
-                
-                    Vector2 touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
-                    Vector3 touchWorldPosition = Camera.main.ScreenToWorldPoint(touchPosition);
-                    towerInstance.transform.position = touchWorldPosition;
-                    if(!UnityEngine.InputSystem.Touchscreen.current.press.IsPressed())
+                    if(Physics.Raycast(GetTouchRay(), out raycastHit, 1000, canCreateTowerOnLayer))
                     {
+                        foreach (var terrain in GameObject.FindGameObjectsWithTag("Constructable"))
+                        {
+                            terrain.GetComponent<MeshRenderer>().material.color = Color.white;
+                        }
+
+                        var towerInstance = Instantiate(towerToCreate,raycastHit.point, Quaternion.identity);
                         bank.SpendResources(towerInstance.GetPrice(), towerInstance.GetWoodPrice(), towerInstance.GetStonePrice());
-                        towerInstance.GetComponent<Tower>().enabled = true;
-                        towerInstance.GetComponent<TowerAttack>().enabled = true;
-                        yield break; 
+                        yield break;
                     }
                 }
             }
         }
 
+        private void TouchPractice()
+        {
+            //enhancedTouch
+        }
+
         public static Ray GetMouseRay()
         {
             return Camera.main.ScreenPointToRay(Input.mousePosition);
+        }
+        
+        public static Ray GetTouchRay()
+        {
+            return Camera.main.ScreenPointToRay(Touchscreen.current.primaryTouch.position.ReadValue());
         }
 
     }

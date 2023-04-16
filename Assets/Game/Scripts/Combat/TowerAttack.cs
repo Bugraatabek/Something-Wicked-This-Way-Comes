@@ -14,7 +14,7 @@ namespace TD.Combat
         [SerializeField] EDamageType damageType;
         [SerializeField] GameObject projectile = null;
         [SerializeField] float damage = 20;
-        [SerializeField] float attackSpeed = 1;
+        //[SerializeField] float attackSpeed = 1;
         [SerializeField] float range = 5f;
 
 
@@ -50,7 +50,6 @@ namespace TD.Combat
 
         private Target FindTarget()
         {
-            
             foreach (Target target in FindObjectsOfType<Target>())
             {
                 if(target.GetComponent<Enemy>().IsDead()) continue;
@@ -70,7 +69,6 @@ namespace TD.Combat
 
         private bool TargetisInRange()
         {
-            
             if(Vector3.Distance(target.transform.position, transform.position) > range || target.GetComponent<Enemy>().IsDead())
             {
                 print("target is out of range");

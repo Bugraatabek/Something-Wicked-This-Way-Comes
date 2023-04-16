@@ -34,11 +34,21 @@ namespace TD.Core
         public void TakeDamage(float damage)
         {
             health -= damage;
+            if(health <= 0)
+            {
+                Destroy(gameObject, 1f);
+            }
         }
 
         public void Repair(float value)
         {
             health += value;
+        }
+
+        public bool IsDestroyed()
+        {
+            if(health <= 0) return true;
+            return false;
         }
 
         public void useMana(float value)

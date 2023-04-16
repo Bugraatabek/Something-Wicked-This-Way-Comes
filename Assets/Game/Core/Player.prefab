@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4973892848361693064}
   - component: {fileID: 4973892848361693065}
   - component: {fileID: 4973892848361693066}
+  - component: {fileID: 1043562244}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -45,7 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d5c1eb9ee6a235488d0b3c43f908e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialBalance: 100
+  initialGold: 20
+  initialWood: 20
+  initialStone: 20
 --- !u!114 &4973892848361693066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,8 +61,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f648debd9e4389468f930d9f5b86aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerToCreate: {fileID: 4163943742778915762, guid: 6b7a348c5fc3ae44d9226abab18f7b42,
-    type: 3}
   canCreateTowerOnLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &1043562244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4973892848361693067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 949bc776a0135734f977f53727125a40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5

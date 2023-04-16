@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3086035785288738260}
   - component: {fileID: 3086035785288738261}
   m_Layer: 0
-  m_Name: Root Wave
+  m_Name: Editor Wave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,5 +45,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - {fileID: 3676070193306901601, guid: b944b44e50d941f46b469782e72e9112, type: 3}
-  - {fileID: 3676070193306901601, guid: b944b44e50d941f46b469782e72e9112, type: 3}
+  - {fileID: 4949414530484897724, guid: ccad3e1c0f9df5e42a62eebd784bb5ac, type: 3}
+  - {fileID: 4949414530484897724, guid: 8e3c87aed8a4c2146acb70cb33f5c9e4, type: 3}
+  - {fileID: 4949414530484897724, guid: 3337dd05295898b43a7bfbc8ac71a9de, type: 3}
+  - {fileID: 4949414530484897724, guid: ccad3e1c0f9df5e42a62eebd784bb5ac, type: 3}
+  - {fileID: 4949414530484897724, guid: 8e3c87aed8a4c2146acb70cb33f5c9e4, type: 3}
+  - {fileID: 4949414530484897724, guid: 3337dd05295898b43a7bfbc8ac71a9de, type: 3}
+  - {fileID: 4949414530484897724, guid: ccad3e1c0f9df5e42a62eebd784bb5ac, type: 3}
+  - {fileID: 4949414530484897724, guid: 8e3c87aed8a4c2146acb70cb33f5c9e4, type: 3}
+  - {fileID: 4949414530484897724, guid: 3337dd05295898b43a7bfbc8ac71a9de, type: 3}
+  - {fileID: 4949414530484897724, guid: ccad3e1c0f9df5e42a62eebd784bb5ac, type: 3}
+  - {fileID: 4949414530484897724, guid: 8e3c87aed8a4c2146acb70cb33f5c9e4, type: 3}
+  - {fileID: 4949414530484897724, guid: 3337dd05295898b43a7bfbc8ac71a9de, type: 3}

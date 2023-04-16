@@ -20,6 +20,7 @@ namespace TD.Combat
 
         public UnityEvent onDie;
         public UnityEvent onTakeDamage;
+        public UnityEvent onHealed;
 
         private void Awake() 
         {
@@ -46,6 +47,25 @@ namespace TD.Combat
                 GameObject.FindWithTag("Player").GetComponent<Bank>().GainResources(goldPrize);
                 Destroy(gameObject, destroyObjectDelay);
             }
+        }
+
+        public void Heal(float heal)
+        {
+            health += heal;
+            if(health >= maxHealth)
+            {
+                health = maxHealth;
+            }
+            if(onHealed != null)
+            {
+                onHealed.Invoke();
+            }
+            print($"recevied heal of {heal} health is now {health}");
+        }
+
+        public bool IsMaxHealth()
+        {
+            return health >= maxHealth;
         }
 
         public float GetEnemyHealth()

@@ -19,7 +19,7 @@ namespace TD.UI
         private void Start() 
         {
             healthText.text = $"Health: {playerHealth.GetCurrentHealth()} points";
-            goldText.text = $"{bank.GetGold()} gold";
+            goldText.text = $"{bank.GetGold()} prayer";
             woodText.text = $"{bank.GetWood()} wood";
             stoneText.text = $"{bank.GetStone()} stone";
         }
